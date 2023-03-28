@@ -25,4 +25,10 @@ The DeviceRegistry Smart Contract is a Solidity smart contract that allows users
 +------------------+          +----------------------+            +-----------------------+
                               | - viewDeviceHistory  | 
                               +----------------------+
+                              
+The Python script periodically monitors a device's system resources, specifically CPU usage, CPU temperature, and RAM usage, and updates these values as variables in a smart contract on a local Ethereum Hardhat node. The script relies on the web3.py library to interact with the Ethereum blockchain and the psutil library to collect system information.
+
+The script first establishes a connection with the local Hardhat Ethereum node and initializes the Device Registry smart contract using the ABI and contract address. It then continuously monitors the system resources every 10 seconds. For each iteration, the script gathers the CPU usage as a percentage, the CPU temperature in Celsius, and the RAM usage as a percentage, and sends a transaction to the smart contract to update the device variables with these values.
+
+This allows the device to maintain an up-to-date record of its system resources on the Ethereum blockchain, enabling users to track the device's performance over time through the smart contract.
 
